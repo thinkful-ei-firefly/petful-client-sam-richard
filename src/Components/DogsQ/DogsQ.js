@@ -53,7 +53,7 @@ class DogsQ extends React.Component {
           <li>breed: {dog.breed}</li>
           <li>story: {dog.story}</li>
         </ul>
-        <button onClick={this.adoptDog} disabled={adoptable ? false : true}>Adopt!</button><br />
+        <button onClick={this.adoptDog} className={adoptable ? '' : 'disabled'} disabled={adoptable ? false : true}>Adopt</button><br />
         <button onClick={this.previousDog} hidden={!qPosition}>Previous Dog</button>
         <button onClick={this.nextDog} hidden={qPosition === this.state.dogQ.length-1}>Next Dog</button>
       </div>

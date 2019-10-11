@@ -52,7 +52,7 @@ class CatsQ extends React.Component {
           <li>breed: {cat.breed}</li>
           <li>story: {cat.story}</li>
         </ul>
-        <button onClick={this.adoptCat} disabled={adoptable ? false : true}>Adopt!</button><br />
+        <button onClick={this.adoptCat} className={adoptable ? '' : 'disabled'} disabled={adoptable ? false : true}>Adopt</button><br />
         <button className='nav' onClick={this.previousCat} hidden={!qPosition}>Previous Cat</button>
         <button className='nav' onClick={this.nextCat} hidden={qPosition === this.state.catQ.length-1}>Next Cat</button>
       </div>

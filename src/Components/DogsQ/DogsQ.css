@@ -14,3 +14,8 @@
   max-width: 90vw;
   max-height: 40vh;
 }
+
+.DogsQ .disabled {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: lightgray;
+}
