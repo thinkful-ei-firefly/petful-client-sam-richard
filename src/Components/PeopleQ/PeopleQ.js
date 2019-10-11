@@ -21,7 +21,7 @@ class PeopleQ extends React.Component {
           Hopeful pet owners
         </h3>
         <ul>Next up: {people}</ul>
-        <p>
+        <p className='qPosition'>
           {position===0 ? "It's your turn to pick a pet!" : (position!==null ? `Your position in the Queue is ${position+1}` : '')}
         </p>
       </div>

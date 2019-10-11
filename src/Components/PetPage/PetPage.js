@@ -7,6 +7,8 @@ import CatsQ from '../CatsQ/CatsQ'
 import PetfulApiService from '../../Services/petful-api-service'
 import TokenService from '../../Services/token-service'
 
+import './PetPage.css'
+
 class PetPage extends React.Component {
 
   state = {
@@ -63,30 +65,6 @@ class PetPage extends React.Component {
       })
   }
 
-  // adoptDog = () => {
-  //   PetfulApiService.adoptDog()
-  //     .then(res => {
-  //       TokenService.clearToken();
-  //       let { dogQ, peopleQ }= this.state
-  //       dogQ.shift()
-  //       peopleQ.shift()
-  //       this.setState( { dogQ: dogQ, position: null } )
-  //     })
-  //   PetfulApiService.leaveQ()
-  // }
-
-  // adoptCat = () => {
-  //   PetfulApiService.adoptCat()
-  //     .then(res => {
-  //       TokenService.clearToken();
-  //       let { catQ, peopleQ }= this.state
-  //       catQ.shift()
-  //       peopleQ.shift()
-  //       this.setState( { catQ: catQ, position: null } )
-  //     })
-  //   PetfulApiService.leaveQ()
-  // }
-
   resetPosition = () => {
     TokenService.clearToken()
     let peopleQ = this.state.peopleQ
@@ -100,7 +78,7 @@ class PetPage extends React.Component {
   render() {
     const { position, peopleQ, loadingPeople} = this.state
     return (
-      <div>
+      <div className='PetPage'>
         <h1>Petful</h1>
         {position !== null ? '' : <Signup onSubmit={this.joinQ}/>}
         <PeopleQ peopleQ = {peopleQ} position={this.state.position} loading={loadingPeople}/>
