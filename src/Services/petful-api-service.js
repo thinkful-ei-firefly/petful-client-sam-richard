@@ -1,7 +1,7 @@
 import config from '../config'
 
 const PetfulApiService = {
-  url: config.API_PRODUCTION_ENDPOINT,
+  url: config.API_ENDPOINT,
 
   getAllDogs() {
     return fetch(this.url+'/dogs/getalldogs', {})
