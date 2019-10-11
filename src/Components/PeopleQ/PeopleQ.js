@@ -1,5 +1,4 @@
 import React from 'react'
-import PetfulApiService from '../../Services/petful-api-service'
 
 import './PeopleQ.css'
 
