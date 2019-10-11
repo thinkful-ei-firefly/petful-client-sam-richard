@@ -6,39 +6,14 @@ import './DogsQ.css'
 class DogsQ extends React.Component {
   
   state = {
-    // dogQ: this.props.dogQ
-    dogQ: [{
-      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
-      name: 'Zeus',
-      sex: 'Male',
-      age: 3,
-      breed: 'Golden Retriever',
-      story: 'Owner Passed away'
-    },
-    {
-      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
-      name: 'Athena',
-      sex: 'Female',
-      age: 2,
-      breed: 'Golden Retriever',
-      story: 'Owners Passed away'
-    },
-    {
-      imageURL: 'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-      imageDescription: 'A smiling golden-brown golden retreiver listening to music.',
-      name: 'Zeus',
-      sex: 'Male',
-      age: 3,
-      breed: 'Golden Retriever',
-      story: 'Owner Passed away'
-    }],
-    qPosition: 0
+    dogQ: null,
+    qPosition: 0,
+    loading: true
   }
 
   componentDidMount() {
-    
+    PetfulApiService.getAllDogs()
+      .then(dogs => this.setState({ dogQ: dogs, loading: false}))
   }
 
   nextDog = () => {
@@ -49,12 +24,25 @@ class DogsQ extends React.Component {
     this.setState({ qPosition: this.state.qPosition-1 })
   }
 
+  adoptDog = () => {
+    console.log('adopting dog')
+    PetfulApiService.adoptDog()
+      .then(res => {
+        window.alert('Congrats! You adopted a dog! Rejoin the que if you want to adopt more pets.')
+        let { dogQ }= this.state
+        dogQ.shift()
+        this.setState( { dogQ: dogQ } )
+        this.props.resetPosition()
+      })
+  }
+
   render() {
+    if (this.state.loading) return ('loading')
     const { qPosition }= this.state
     const dog = this.state.dogQ[this.state.qPosition]
     let adoptable = true;
     if (qPosition !== 0) adoptable = false
-    if (this.props.firstInQ === false) adoptable = false
+    if (this.props.position !== 0) adoptable = false
     return (
       <div className='DogsQ'>
         <img src={dog.imageURL} alt={dog.imageDescription}/>
@@ -65,7 +53,7 @@ class DogsQ extends React.Component {
           <li>breed: {dog.breed}</li>
           <li>story: {dog.story}</li>
         </ul>
-        <button disabled={adoptable ? false : true}>Adopt!</button><br />
+        <button onClick={this.adoptDog} disabled={adoptable ? false : true}>Adopt!</button><br />
         <button onClick={this.previousDog} hidden={!qPosition}>Previous Dog</button>
         <button onClick={this.nextDog} hidden={qPosition === this.state.dogQ.length-1}>Next Dog</button>
       </div>

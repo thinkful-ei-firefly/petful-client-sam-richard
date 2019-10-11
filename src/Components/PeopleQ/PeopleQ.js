@@ -5,23 +5,17 @@ import './PeopleQ.css'
 
 class PeopleQ extends React.Component {
 
-  state = {
-    // peopleQ: this.props.peopleQ
-    peopleQ: ['Bob', 'Sarah', 'John', 'Candice']
-  }
-
-  componentDidMount() {
-
-  }
   
   render() {
     const people = []
-    this.state.peopleQ.forEach((person, i) => {
-      people.push(
-        <li key={i}>{person}</li>
-      )
-    })
-    const { inQ } = this.props
+    const { position } = this.props
+    if (this.props.peopleQ) {
+      this.props.peopleQ.forEach((person, i) => {
+        people.push(
+          <li key={i}>{person.name}</li>
+        )
+      })
+    }
     return (
       <div className='PeopleQ'>
         <h3>
@@ -29,7 +23,7 @@ class PeopleQ extends React.Component {
         </h3>
         <ul>Next up: {people}</ul>
         <p>
-          {inQ ? 'Your position in Q: ' : ''}
+          {position===0 ? "It's your turn to pick a pet!" : (position!==null ? `Your position in the Queue is ${position+1}` : '')}
         </p>
       </div>
     )
