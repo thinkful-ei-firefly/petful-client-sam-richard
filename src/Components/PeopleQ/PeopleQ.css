@@ -1,0 +1,14 @@
+.PeopleQ ul {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  margin-left: 45vw;
+  align-items: baseline;
+}
+
+.PeopleQ li {
+  border: solid 1px black;
+  border-radius: 15px;
+  padding: 5px;
+  margin-left: 10px;
+}

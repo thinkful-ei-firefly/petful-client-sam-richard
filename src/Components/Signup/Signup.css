@@ -1,0 +1,11 @@
+.Signup {
+  border: solid black 1px;
+  margin: 5px 20vw;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.Signup input {
+  margin-left: 5px;
+  margin-right: 5px;
+}

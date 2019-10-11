@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 18px;
 }
 
 .App-logo {
@@ -19,4 +20,11 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.App button {
+  font-size: 1em;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: rgba(211, 211, 211, .5);
 }

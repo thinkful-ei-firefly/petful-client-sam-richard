@@ -1,0 +1,17 @@
+.CatsQ ul {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 5px;
+}
+
+.CatsQ h3 {
+  font-size: 1.4em;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.CatsQ img {
+  margin-top: 20px;
+  max-width: 90vw;
+  max-height: 40vh;
+}
