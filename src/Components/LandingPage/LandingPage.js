@@ -10,7 +10,7 @@ const LandingPage = () => {
       <img src='https://www.condorferries.co.uk/media/2455/taking-your-pet-5.jpg' alt='pets' />
       <p>
         Petful handles the adoption process a little differently than other shelters.
-        At any given time you are only given the option to adopt the cat and/or dog that have been with us the longest.
+        At any given time you will only be given the option to adopt the cat and/or dog that have been with us the longest.
         Since we potentially will have a lot of people looking to adopt at any given time, you won't necessarily
         have the option to adopt right away if someone else got here first. On the next page you will be given your
         current position in the adoption queue to know when you will get your chance to adopt a pet, and while waiting
