@@ -1,7 +1,7 @@
 # Petful
 ## Created by Sam and Richard
 
-live-link: https://petful-sam-richard.now.sh/pets
+live-link: https://petful-sam-richard.now.sh/
 server repo: https://github.com/thinkful-ei-firefly/petful-server-sam-richard
 api-endpoint: https://petful-sam-richard.herokuapp.com/api/
 
